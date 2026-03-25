@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+
+{% block title %} Entrada no Estoque {% endblock %}
+
+{% block body %}
+
+<h3> Entrada no Estoque </h3>
+
+<form action="">
+
+    <select name="genero" id="genero">
+        <!-- Informações vindas do back-end -->
+    </select>
+    <br>
+    Data de recebimento:
+    <input type="date" name="entrada" id="entrada">
+    <br>
+    Data de validade:
+    <input type="date" name="validade" id="validade">
+    <br>
+    Quantidade:
+    <input type="number" name="quant" id="quant">
+    <br>
+    <input type="submit" value="Adicionar">
+</form>
+
+{% endblock %}

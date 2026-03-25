@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+
+{% block title %} Consumo {% endblock %}
+
+{% block body %}
+
+<h3> Consumo </h3>
+
+<form action="">
+
+    Gênero:
+    <select name="genero" id="genero">
+        <!-- Informações vindas do back-end -->
+    </select>
+    <br>
+    Quantidade:
+    <input type="number" name="quant" id="quant">
+    <br>
+    Data:
+    <input type="date" name="dia_consumo" id="dia_consumo">
+    <br>
+    Refeição:
+    <select name="ref" id="ref">
+        <option value="Lanche">Lanche</option>
+        <option value="Almoço">Almoço</option>
+    </select>
+    <br>
+    Responsável
+    <input type="text" name="resp" id="resp">
+    <br>
+    <input type="submit" value="Adicionar">
+</form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+
+{% block title %} Cadastrar Gênero Alimentício {% endblock %}
+
+{% block body %}
+
+<h3> Cadastro de Gênero Alimentício </h3>
+
+<form action="">
+
+    Nome: <input type="text">
+    <br>
+    Unidade de Medida:
+    <select name="Medida" id="Medida">
+
+        <option value="Unidade">Unidade</option>
+        <option value="Kg">Kg</option>
+        <option value="Litro">Litro</option>
+
+    </select>
+    <br>
+    Estoque Mínimo: <input type="number" name="min" id="min" step="0.1" min="0" placeholder="0,0">
+    <br>
+    <input type="submit" value="Adicionar">
+</form>
+
+{% endblock %}
