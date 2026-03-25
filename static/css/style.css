@@ -1,0 +1,24 @@
+/* Estilo para Nav e Tabelas  */
+
+nav{
+  margin-bottom: 5%
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly
+}
+    
+table,tr,td{
+  border: 1px solid #555;
+  border-collapse: collapse;
+  padding: 5px;
+  margin: auto
+}
+
+h3{
+    
+    text-align: center;
+}
+

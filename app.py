@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from .models import db
+from .routes import routes_bp
 
 def create_app():
     app = Flask(__name__)
@@ -11,9 +12,7 @@ def create_app():
     with app.app_context():
         db.create_all()
   
-    @app.route('/')
-    def home():
-        return render_template('home.html')
+    app.register_blueprint(routes_bp)
 
     return app
 

@@ -10,6 +10,14 @@ def client():
         yield client
 
 
-def test_home_status_code(client):
+def test_estoque_status_code(client):
     response = client.get('/')
+    assert response.status_code == 200
+
+def test_genero_status_code(client):
+    response = client.get('/genero')
+    assert response.status_code == 200
+
+def test_consumo_status_code(client):
+    response = client.get('/consumo')
     assert response.status_code == 200
