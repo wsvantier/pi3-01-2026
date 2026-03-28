@@ -9,10 +9,11 @@
 <form action="">
 
     <select name="genero" id="genero">
-    {% for produto in produtos %}
+        <option value="" selected disabled>-- Selecione --</option>
+        {% for produto in produtos %}
         <option value="{{ produto.id }}">{{ produto.nome }}</option>
-    {% endfor %}
-</select>
+        {% endfor %}
+    </select>
     <br>
     Data de recebimento:
     <input type="date" name="entrada" id="entrada">
