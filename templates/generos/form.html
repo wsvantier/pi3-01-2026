@@ -23,5 +23,21 @@
     <br>
     <input type="submit" value="Adicionar">
 </form>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const medida = document.getElementById("medida");
+    const inputMin = document.getElementById("min");
+
+    medida.addEventListener("change", function () {
+        if (medida.value === "Unidade") {
+            inputMin.step = "1";
+            inputMin.placeholder = "0";
+        } else {
+            inputMin.step = "0.1";
+            inputMin.placeholder = "0,0";
+        }
+    });
+});
+</script>
 
 {% endblock %}
