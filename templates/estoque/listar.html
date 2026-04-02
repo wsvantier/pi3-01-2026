@@ -7,8 +7,7 @@
 
 <a href="{{url_for('routes_bp.form_estoque')}}"> Inserir novo lote </a>
 
-<table>
-
+<table border="1">
     <thead>
         <tr>
             <td> Gênero Alimentício </td>
@@ -16,9 +15,38 @@
             <td> Quantidade em Estoque </td>
         </tr>
     </thead>
-    <tbody>
-        <!-- Conteúdo que vai ser inserido por JS -->
+    <tbody id="tabela-estoque">
+        <!-- Conteúdo inserido via JS -->
     </tbody>
-
 </table>
+
+<script>
+    async function carregarEstoque() {
+        try {
+            const response = await fetch("/api/estoque");
+            const dados = await response.json();
+
+            const tbody = document.getElementById("tabela-estoque");
+            tbody.innerHTML = "";
+
+            dados.forEach(item => {
+                const linha = `
+                    <tr>
+                        <td>${item.nome}</td>
+                        <td>${item.unidade_medida}</td>
+                        <td>${item.estoque_total}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += linha;
+            });
+
+        } catch (erro) {
+            console.error("Erro ao carregar estoque:", erro);
+        }
+    }
+
+    // Executa ao carregar a página
+    carregarEstoque();
+</script>
+
 {% endblock %}

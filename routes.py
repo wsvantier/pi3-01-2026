@@ -183,3 +183,20 @@ def api_lotes(produto_id):
     } for l in lotes]
 
     return jsonify(dados)
+
+@routes_bp.route('/api/consumo')
+def api_consumo():
+    consumos = Consumo.query.order_by(Consumo.data_consumo.desc()).all()
+
+    dados = []
+    for c in consumos:
+        dados.append({
+            "id": c.id,
+            "produto": c.lote.produto.nome,
+            "quantidade": float(c.quantidade),
+            "data": c.data_consumo.strftime('%d/%m/%Y'),
+            "refeicao": c.refeicao,
+            "responsavel": c.responsavel
+        })
+
+    return jsonify(dados)
